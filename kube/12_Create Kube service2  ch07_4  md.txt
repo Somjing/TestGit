@@ -1,0 +1,20 @@
+#basic-command-II.md
+kubectl create deployment ngcluster --image=nginx
+kubectl expose deployment ngcluster --type="ClusterIP" --port 80
+kubectl create deployment ngnodeport --image=nginx
+kubectl expose deployment ngnodeport --type="NodePort" --port 80
+## get service
+kubectl get service 
+## describe servier
+kubectl describe svc ngcluster
+kubectl scale deployments/ngnodeport --replicas=3
+## test
+kubectl run curl -it --image=curlimages/curl sh
+curl http://<cluster-ip>:80
+kubectl describe svc ngnodeport
+## generate yaml file
+kubectl create deployment nginxgateway1 --image=nginx --dry-run=client -o yaml
+# create external service
+kubectl apply -f external.yaml
+kubectl run -it busyb --image=busybox:1.28 sh
+ping googlesite

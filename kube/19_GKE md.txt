@@ -1,0 +1,16 @@
+https://cloud.google.com/sdk/docs/downloads-interactive
+gcloud init
+gcloud container clusters create k8s-demo
+## automatically create profile on your pc
+kubectl config view
+gcloud container clusters get-credentials demo-k8s
+## test LB
+kubectl create deployment ngcluster --image=nginx
+kubectl expose deployment ngcluster --type="LoadBalancer" --port 80
+## open LB pages, you will see LB creating
+kubectl apply -f pvc.yaml
+kubectl apply -f pv-pod-gke.yaml
+## get pv , see re-claim policy is delete
+kubectl get pv
+## delete cluster
+gcloud container clusters delete demo-k8s

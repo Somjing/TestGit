@@ -1,0 +1,5 @@
+kubectl apply -f empty.yaml
+kubectl exec -it sharevol
+kubectl exec -it sharevol1 --container=c1 sh
+## empty dir location
+/var/lib/kubelet/pods/<id>/volumes/

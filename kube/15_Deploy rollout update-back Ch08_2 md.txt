@@ -1,0 +1,11 @@
+kubectl delete deployment,rs,pod --all
+## create deployment
+kubectl apply -f nginx-deployment.yaml
+kubectl rollout status deployment nginx-deployment
+kubectl get pods --show-labels
+# update ngnix to 1.16.1, 18.1, latest
+# list rollout history
+kubectl rollout history deployment nginx-deployment
+# list history revision=2
+kubectl rollout history deployment nginx-deployment --revision=2
+kubectl rollout undo deployment.v1.apps/nginx-deployment --to-revision=2

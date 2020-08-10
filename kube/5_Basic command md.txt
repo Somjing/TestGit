@@ -1,0 +1,59 @@
+#basic-command.md
+
+## get version
+kubectl version
+## check cluster status
+kubectl get componentstatuses
+## List nodes
+kubectl get nodes 
+kubectl get nodes -o wide
+# get cluster info
+kubectl cluster-info
+
+# get pod information
+kubectl get pods
+kubectl get pods -o=json
+kubectl get pods -o=yaml
+## get more detail
+kubectl describe node
+kubectl describe pod 
+kubectl describe pod nginx
+
+kubectl get pods --all-namespaces
+kubectl get pods -n kube-system
+kubectl run mybusybox --image=busybox -it -- sh
+kubectl run -it myubuntu --image=ubuntu
+## remote to node-n
+sudo docker images
+sudo docker ps
+sudo docker inspect <container-id>
+kubectl attach ubuntu -c ubuntu -i -t
+kubectl exec -it myubuntu -- hostname
+kubectl exec -it myubuntu -- bash
+
+touch myfile.txt
+kubectl cp myfile.txt myubuntu:/tmp/
+kubectl exec -it myubuntu -- ls /tmp/
+kubectl cp myubuntu:/tmp/myfile.txt yourfile.txt
+
+## Get all resource
+kubectl get all
+
+## copy host <==> container
+kubectl cp a.txt  ubuntu:/
+kubectl cp ubuntu:/a.txt  /home/devops/b.txt
+
+kubectl run nginx --image=nginx
+kubectl get pod -o wide   
+curl http://<container-ip>
+kubectl logs -f nginx
+
+kubectl get pods --watch
+## Explain resource
+kubectl explain pod 
+
+## open another terminal and run
+kubectl get pod --watch 
+## Delete all pods
+kubectl delete --all pods 
+

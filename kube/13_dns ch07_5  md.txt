@@ -1,0 +1,10 @@
+kubectl create deployment ng --image=nginx 
+kubectl expose deployment ng --type="NodePort" --port 80
+kubectl create deployment ng --image=nginx -n test
+kubectl expose deployment ng --type="NodePort" --port 80  -n test
+kubectl run bb -it  --image=busybox:1.28 sh
+ping ng.default.svc.cluster.local
+ping ng.default.test.cluster.local
+ping xx-xx-xx-xx.test.pod.cluster.local
+## dns service
+kubectl get svc -n kube-system

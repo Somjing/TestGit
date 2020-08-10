@@ -1,0 +1,6 @@
+kubectl create deployment deploynginx --image=nginx
+kubectl get deployment
+kubectl describe deployment deploynginx
+kubectl get replicaset
+kubectl get deployment --watch
+kubectl scale deployments deploynginx --replicas=2

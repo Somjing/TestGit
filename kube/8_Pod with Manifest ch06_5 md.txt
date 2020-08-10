@@ -1,0 +1,7 @@
+kubectl run busybox2 --image=busybox:1.28 sleep 3600
+kubectl apply –f busybox.yaml
+kubectl apply –f multipod.yaml
+kubectl exec -it myappv1 --container myredis -- /bin/bash
+kubectl delete -f busybox.yaml
+kubectl delete -f multipod.yaml
+kubectl apply –f PodonNode.yaml

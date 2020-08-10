@@ -1,0 +1,5 @@
+##imparative
+kubectl run nginx-imperative --nginx
+## declarative
+kubectl create -f pod.yaml
+kubectl apply -f pod.yaml

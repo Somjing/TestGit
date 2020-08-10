@@ -1,0 +1,6 @@
+kubectl create namespace dev
+kubectl apply -f pod-ns.yaml  --namespace=test
+kubectl apply -f quotaresource.yaml
+kubectl apply -f pod-quota.yaml --namespace=test
+kubectl apply -f quotacpu.yaml
+kubectl delete ns dev

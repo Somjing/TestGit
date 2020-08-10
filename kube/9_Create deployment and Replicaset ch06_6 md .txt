@@ -1,0 +1,5 @@
+kubectl apply -f rs.yaml
+kubectl apply -f pod-rs.yaml
+kubectl apply -f rs-frontend.yaml
+kubectl delete pod pod1
+kubectl apply -f deployment.yaml

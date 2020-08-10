@@ -1,0 +1,6 @@
+kubectl apply -f myservice.yaml
+kubectl apply  -f pod-svc.yaml
+kubectl apply -f pod-svc2.yaml
+kubectl apply -f myservice2.yaml
+kubectl apply -f deploy.yaml
+kubectl apply -f multisvc.yaml
