@@ -1,0 +1,7 @@
+print("Welcome to Somjing Shop")
+print("---------------------------")
+print("Apple    3   30THB   90")
+print("Banana   1   10THB   10")
+print("---------------------------")
+print("Total 100THB")
+print("Thank You : Somjing Shop")
